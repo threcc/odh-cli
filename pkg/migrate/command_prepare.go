@@ -63,11 +63,7 @@ func (c *PrepareCommand) AddFlags(fs *pflag.FlagSet) {
 	fs.IntVar(&c.Burst, "burst", c.Burst, "Kubernetes API burst capacity")
 
 	// Let actions register their own flags
-	for _, a := range c.registry.ListAll() {
-		if configurer, ok := a.(action.ActionConfigurer); ok {
-			configurer.AddFlags(fs)
-		}
-	}
+	action.RegisterActionFlags(c.registry, fs)
 }
 
 func (c *PrepareCommand) Complete() error {
