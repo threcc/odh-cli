@@ -43,6 +43,7 @@ func NewRunCommand(streams genericiooptions.IOStreams) *RunCommand {
 	// Explicitly register all actions (no global state, full test isolation)
 	registry.MustRegister(&rhbok.RHBOKMigrationAction{})
 	registry.MustRegister(&modelserving.ServerlessToRawAction{})
+	registry.MustRegister(&modelserving.ModelMeshToRawAction{})
 
 	return &RunCommand{
 		SharedOptions: shared,

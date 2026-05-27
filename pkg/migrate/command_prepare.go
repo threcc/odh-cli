@@ -47,6 +47,7 @@ func NewPrepareCommand(streams genericiooptions.IOStreams) *PrepareCommand {
 	// Explicitly register all actions (no global state, full test isolation)
 	registry.MustRegister(&rhbok.RHBOKMigrationAction{})
 	registry.MustRegister(&modelserving.ServerlessToRawAction{})
+	registry.MustRegister(&modelserving.ModelMeshToRawAction{})
 
 	return &PrepareCommand{
 		SharedOptions: shared,

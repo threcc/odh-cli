@@ -52,6 +52,7 @@ func NewListCommand(streams genericiooptions.IOStreams) *ListCommand {
 	// Explicitly register all actions (no global state, full test isolation)
 	registry.MustRegister(&rhbok.RHBOKMigrationAction{})
 	registry.MustRegister(&modelserving.ServerlessToRawAction{})
+	registry.MustRegister(&modelserving.ModelMeshToRawAction{})
 
 	return &ListCommand{
 		SharedOptions: shared,
