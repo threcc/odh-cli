@@ -45,6 +45,7 @@ func NewRunCommand(streams genericiooptions.IOStreams) *RunCommand {
 	registry.MustRegister(&modelserving.ServerlessToRawAction{})
 	registry.MustRegister(&modelserving.ModelMeshToRawAction{})
 	registry.MustRegister(&modelserving.HardwareProfilesIgnorelistAction{})
+	registry.MustRegister(&modelserving.AddOwnerReferencesAction{})
 
 	return &RunCommand{
 		SharedOptions: shared,

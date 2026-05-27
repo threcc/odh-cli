@@ -54,6 +54,7 @@ func NewListCommand(streams genericiooptions.IOStreams) *ListCommand {
 	registry.MustRegister(&modelserving.ServerlessToRawAction{})
 	registry.MustRegister(&modelserving.ModelMeshToRawAction{})
 	registry.MustRegister(&modelserving.HardwareProfilesIgnorelistAction{})
+	registry.MustRegister(&modelserving.AddOwnerReferencesAction{})
 
 	return &ListCommand{
 		SharedOptions: shared,
